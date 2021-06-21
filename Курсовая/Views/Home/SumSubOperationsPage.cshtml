@@ -1,0 +1,262 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="main-content">
+    <div class="operation-container">
+        <div id="matr-calc">
+            <div id="MatrDimSelect">
+                Размер матриц:
+                <select onchange="GetRowAmount(this.value)" name="dim" id="first-matr-dim">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+
+                </select>
+                *
+                <select onchange="GetColumnAmount(this.value)" name="dim" id="first-matr-dim">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div id="OperationSelect">
+                Операция:
+                <select onchange="CallOperation(this.value)" name="opr" id="SumSubOperations">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                </select>
+            </div>
+            <button onclick="GetResult()" id="get-res"> Get Result  </button>
+            <form id="MatrixCalcForm">
+                <input value="Drop" id="ResetInput" type="reset">
+
+                <p id="here"></p>
+                <p id="matr-values-p">Введите значение матриц: </p>
+                <div class="matrixA-container">
+                    <p id="matrA-p">  A = </p>
+                    <table id="MatrixA" class="MatrixTable">
+                        <tr class="matr-row-1 ">
+                            <td class="matr-col-1"><input class="matr-input-cell-1" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-2" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-3" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-4" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-5" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-6" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-7" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-2">
+                            <td class="matr-col-1"><input class="matr-input-cell-8" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-9" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-10" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-11" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-12" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-13" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-14" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-3 row-bigger-2">
+                            <td class="matr-col-1"><input class="matr-input-cell-15" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-16" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-17" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-18" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-19" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-20" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-21" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-4 row-bigger-2 row-bigger-3">
+                            <td class="matr-col-1"><input class="matr-input-cell-22" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-23" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-24" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-25" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-26" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-27" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-28" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-5 row-bigger-2 row-bigger-3 row-bigger-4">
+                            <td class="matr-col-1"><input class="matr-input-cell-29" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-30" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-31" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-32" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-33" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-34" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-35" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-6 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5">
+                            <td class="matr-col-1"><input class="matr-input-cell-36" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-37" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-38" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-39" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-40" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-41" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-42" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-7 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5 row-bigger-6">
+                            <td class="matr-col-1"><input class="matr-input-cell-43" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-44" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-45" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-46" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-47" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-48" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-49" type="text" placeholder="0"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="matrixB-container">
+                    <p>  B = </p>
+                    <!-- <p class="MatrixesFirstBracket">(</p> -->
+                    <table id="MatrixB" class="MatrixTable">
+                        <tr class="matr-row-1 ">
+                            <td class="matr-col-1"><input class="matr-input-cell-1" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-2" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-3" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-4" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-5" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-6" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-7" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-2">
+                            <td class="matr-col-1"><input class="matr-input-cell-8" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-9" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-10" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-11" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-12" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-13" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-14" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-3 row-bigger-2">
+                            <td class="matr-col-1"><input class="matr-input-cell-15" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-16" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-17" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-18" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-19" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-20" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-21" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-4 row-bigger-2 row-bigger-3">
+                            <td class="matr-col-1"><input class="matr-input-cell-22" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-23" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-24" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-25" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-26" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-27" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-28" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-5 row-bigger-2 row-bigger-3 row-bigger-4">
+                            <td class="matr-col-1"><input class="matr-input-cell-29" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-30" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-31" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-32" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-33" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-34" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-35" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-6 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5">
+                            <td class="matr-col-1"><input class="matr-input-cell-36" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-37" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-38" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-39" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-40" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-41" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-42" type="text" placeholder="0"></td>
+                        </tr>
+                        <tr class="matr-row-7 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5 row-bigger-6">
+                            <td class="matr-col-1"><input class="matr-input-cell-43" type="text" placeholder="0"></td>
+                            <td class="matr-col-2"><input class="matr-input-cell-44" type="text" placeholder="0"></td>
+                            <td class="matr-col-3"><input class="matr-input-cell-45" type="text" placeholder="0"></td>
+                            <td class="matr-col-4"><input class="matr-input-cell-46" type="text" placeholder="0"></td>
+                            <td class="matr-col-5"><input class="matr-input-cell-47" type="text" placeholder="0"></td>
+                            <td class="matr-col-6"><input class="matr-input-cell-48" type="text" placeholder="0"></td>
+                            <td class="matr-col-7"><input class="matr-input-cell-49" type="text" placeholder="0"></td>
+                        </tr>
+                    </table>
+                    <!-- <p class="MatrixesSecondBracket">)</p> -->
+                </div>
+
+                <div class="matrixC-container">
+                    <p>  C = </p>
+                    <!-- <p class="MatrixesFirstBracket">(</p> -->
+                    <table id="MatrixC" class="MatrixTable">
+                        <tr class="matr-row-1 ">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-1" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-2" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-3" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-4" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-5" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-6" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-7" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-2">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-8" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-9" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-10" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-11" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-12" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-13" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-14" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-3 row-bigger-2">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-15" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-16" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-17" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-18" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-19" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-20" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-21" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-4 row-bigger-2 row-bigger-3">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-22" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-23" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-24" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-25" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-26" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-27" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-28" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-5 row-bigger-2 row-bigger-3 row-bigger-4">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-29" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-30" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-31" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-32" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-33" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-34" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-35" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-6 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-36" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-37" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-38" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-39" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-40" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-41" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-42" placeholder="0" readonly></td>
+                        </tr>
+                        <tr class="matr-row-7 row-bigger-2 row-bigger-3 row-bigger-4 row-bigger-5 row-bigger-6">
+                            <td class="matr-col-1"><input type="text" id="matr-res-cell-43" placeholder="0" readonly></td>
+                            <td class="matr-col-2"><input type="text" id="matr-res-cell-44" placeholder="0" readonly></td>
+                            <td class="matr-col-3"><input type="text" id="matr-res-cell-45" placeholder="0" readonly></td>
+                            <td class="matr-col-4"><input type="text" id="matr-res-cell-46" placeholder="0" readonly></td>
+                            <td class="matr-col-5"><input type="text" id="matr-res-cell-47" placeholder="0" readonly></td>
+                            <td class="matr-col-6"><input type="text" id="matr-res-cell-48" placeholder="0" readonly></td>
+                            <td class="matr-col-7"><input type="text" id="matr-res-cell-49" placeholder="0" readonly></td>
+                        </tr>
+                    </table>
+                    <!-- <p class="MatrixesSecondBracket">)</p> -->
+                </div>
+            </form>
+        </div>
+        <div id="first-matrix">
+
+        </div>
+        <div id="second-matrix">
+
+        </div>
+    </div>
+    </div>
+</section>

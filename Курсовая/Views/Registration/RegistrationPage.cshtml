@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Country>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "RegistrationLayout";
+}
+
+<div class="page-content">
+    <div class="page-content-header">
+        <h4>Персональные данные</h4>
+    </div>
+    <div class="dropdown-menu" style="display: contents">
+        <form method="post" action="~/Registration/RegistrationPage" class="px-4 py-3">
+            <div class="mb-3">
+                <label for="exampleDropdownFormLastName1" class="form-label">Фамилия</label>
+                <input type="text" class="form-control" id="exampleDropdownFormLastName1" placeholder="Фамилия" name="LastName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormFirstName1" class="form-label">Имя</label>
+                <input type="text" class="form-control" id="exampleDropdownFormFirstName1" placeholder="Имя" name="FirstName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormPatromymic1" class="form-label">Отчество</label>
+                <input type="text" class="form-control" id="exampleDropdownFormPatromymic1" placeholder="Отчетво" name="Patronymic">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormBirthDate1" class="form-label">Дата рождения</label>
+                <input type="date" class="form-control" id="exampleDropdownFormBirthDate1" placeholder="Дата рождения" name="BirthDate">
+            </div>
+            <div class="coutries-content">
+                <label class="form-label">Страна</label>
+                <select class="form-control" name="Country">
+                    @{
+                        foreach (var country in Model)
+                        {
+                            <option value="@country.Id" name="Country">@country.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="login">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Пароль" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+        <div class="dropdown-divider"></div>
+    </div>
+</div>

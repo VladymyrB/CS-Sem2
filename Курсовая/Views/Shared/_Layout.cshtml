@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CalculatorProject</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/css/layout.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/MatrixCalcPage.css" rel="stylesheet" />
+    <link href="~/css/sum-sub-operations-page.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/js/ColumnsSelectionScript.js"></script>
+    <script type="text/javascript" src="~/js/MatrsAddSubOperations.js"></script>
+    <script type="text/javascript" src="~/js/RowsSelectionScript.js"></script>
+</head>
+<body>
+    <header>Your Online Calculator</header>
+    <nav>
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="nav-item" href="~/Home/index">Главная</a>
+
+                <div class="dropdown nav-item">
+                    <button class="dropbtn">
+                        Калькулятор
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Калькулятор систем исчислений</a>
+                        <a href="~/Home/MatrixCalcPage">Калькулятор матриц</a>
+                        <a href="#">Калькулятор уравнений</a>
+                    </div>
+                </div>
+                <div class="dropdown nav-item">
+                    <button class="dropbtn">
+                        Авторизация
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="~/Auth/AuthPage">Войти в аккаунт</a>
+                        <a href="~/Registration/RegistrationPage">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <section class="main-content">
+    </section>
+    <footer>
+        © 2020-2021<br>
+        Копирование материалов запрещено.<br>
+        Добро пожаловать на YourOnlineCalculator.<br>
+        Бондареко Владимир, Луценко Иван, Лукашенко Игорь - владелецы и со-авторы этого сайта, нами написан весь
+        теоретический материал, а также разработаны онлайн упражнения и калькуляторы, которыми Вы можете воспользоваться для
+        изучения математики.<br>
+        Если Вы хотите связаться с нами, имеете вопросы, предложения или хотите помочь развивать сайт YourOnlineCalculator
+        пишите нам support@youronlinecalculator.com<br>
+    </footer>
+
+
+
+</body>
+</html>

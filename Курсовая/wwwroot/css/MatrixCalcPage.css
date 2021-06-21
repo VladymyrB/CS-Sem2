@@ -1,0 +1,65 @@
+﻿section .matrix-op-container {
+    margin: 200px auto;
+    border-radius: 60px;
+    border: 1px solid #797979;
+    width: 1159px;
+    height: 604px;
+    background-color: #ECEAEA;
+}
+
+section .containter-header {
+    width: 99%;
+    height: 100px;
+    border-radius: 60px;
+    border: 1px solid #D7D7D7;
+    background-color: #D7D7D7;
+    margin: auto;
+}
+
+.containter-header h2 {
+    text-align: center;
+}
+
+.matrix-img {
+    margin: 10px;
+    position: absolute;
+}
+
+.operations {
+    width: 960px;
+    height: 48px;
+    background-color: #D7D7D7;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.matrix-op-container a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .matrix-op-container a:hover {
+        color: blue;
+    }
+
+.sum-sub-ops {
+    width: 960px;
+    height: 48px;
+    background-color: #D7D7D7;
+    font-weight: bold;
+    position: relative;
+    left: 150px;
+}
+
+.det-ops, .rank-ops, .riverse-ops, .transp-ops, .power-ops {
+    left: 45px;
+    width: 1066px;
+}
+
+.prod-div-ops {
+    left: 150px;
+}

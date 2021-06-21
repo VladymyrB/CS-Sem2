@@ -1,0 +1,76 @@
+.operation-container{
+    margin: 200px auto;
+    border-radius: 60px;
+    border: 1px solid #797979;
+    width: 1159px;
+    height: 604px;
+    background-color: #ECEAEA;
+}
+#MatrDimSelect{
+    position: absolute;
+}
+#OperationSelect{
+    margin-left:  300px;
+}
+#get-res{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.matr-row-1,.matr-row-2{
+    display: block;
+}
+.MatrixTable tr{
+    margin-bottom: 5px;
+}
+.matrixA-container p,.matrixB-container p ,.matrixC-container p{
+    position: absolute;
+    
+}
+.matrixA-container,.matrixB-container{
+    position: absolute;
+}
+.matrixB-container{
+    
+    margin-left: 350px;
+}
+.matrixC-container{
+   position: relative;
+   margin-left: 700px;
+   
+}
+/* .matrixA-container,.matrixB-container{
+    margin-top: 50px;
+} */
+.MatrixTable {
+    margin-left: 40px;
+}
+/* .matr-col-1, .matr-col-2{
+    display: contents;
+} */
+.matr-col-1, .matr-col-2 {
+    display: inline;
+}
+.matr-col-3, .matr-col-4,.matr-col-5, .matr-col-6,.matr-col-7{
+    display: none;
+}
+#matr-calc{
+   margin: 60px;
+   height: 300px;
+}
+#matr-values-p{
+    text-align: center;
+    font-weight: bold;
+}
+/* #matrA-p{
+    position: relative;
+} */
+.MatrixTable input{
+    width:30px
+}
+.row-bigger-2{
+   display: none;
+   
+}
+#matr-calc input:focus{
+    border: 2px solid black;
+}

@@ -1,0 +1,31 @@
+﻿.main{
+    margin-top: 80px;
+}
+.greeding-box {
+   
+    font-size: 33px;
+    display: inline;
+    text-align: center;
+}
+
+.greeding-box img {
+        width: 10%;
+}
+
+.info-box {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #ECEAEA;
+    border: 2px solid #797979;
+    border-radius: 60px;
+}
+
+.info-box img {
+        margin-top: 10px;
+        width: 30%;
+        float: right;
+}

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Country>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "RegistrationLayout";
+}
+
+<div class="page-content">
+    <div class="page-content-header">
+        <h4>Персональные данные</h4>
+    </div>
+    <div class="dropdown-menu" style="display: contents">
+        <form method="post" action="~/Auth/AuthPage" class="px-4 py-3">
+            <div class="mb-3">
+                <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="login">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Пароль" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="dropdown-divider"></div>
+    </div>
+</div>

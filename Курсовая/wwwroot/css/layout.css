@@ -1,0 +1,106 @@
+﻿html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    font-size: 33px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-color: #008080;
+    color: white;
+}
+
+.nav-item {
+    margin: 0 60px;
+}
+/* .main-content{
+    height: 1000px;
+  } */
+nav {
+    background-color: #D7D7D7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar {
+    display: inline;
+    width: 100%;
+}
+
+.navbar-inner {
+    display: block;
+    margin: auto;
+    width: 1000px;
+}
+
+.navbar a {
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+    /* padding: 8px; */
+    background-color: #D7D7D7;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.dropbtn {
+    background-color: #D7D7D7;
+    color: Black;
+    padding-right: 35px;
+    padding-left: 35px;
+    /* padding: 8px; */
+    font-size: 23px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #D7D7D7;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        font-size: 23px;
+        color: black;
+        text-decoration: none;
+        display: block;
+        /* padding: 8px; */
+        background-color: #dddddd;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #D7D7D7;
+}
+
+
+footer {
+    font-size: 15px;
+    background-color: #008080;
+    color: white;
+    padding: 30px;
+}
