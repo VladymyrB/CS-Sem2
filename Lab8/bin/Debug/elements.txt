@@ -1,0 +1,4 @@
+Form size: 816;489;
+Checkbox1: True
+Checkbox2: True
+textBox1: test
